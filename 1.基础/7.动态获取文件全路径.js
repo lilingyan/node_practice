@@ -1,3 +1,5 @@
+// require 默认就是当前文件的相对路径，所以不需要处理
+
 const fs = require('fs');
 const path = require('path');
 
