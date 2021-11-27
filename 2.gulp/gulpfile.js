@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const htmlmin = require('gulp-htmlmin');
 
 //gulp first
 gulp.task(
@@ -10,3 +11,16 @@ gulp.task(
         cb();
     }
 );
+
+// gulp htmlmin
+// 压缩html
+gulp.task(
+    'htmlmin',
+    (cb)=>{
+        gulp.src('./src/*.html')
+            // 是否压缩空格
+            .pipe(htmlmin({ collapseWhitespace: true }))
+            .pipe(gulp.dest('dest'));
+        cb();
+    }
+)
